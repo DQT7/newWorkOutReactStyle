@@ -2,7 +2,7 @@ import React from 'react';
 import WorkoutCreate from './WorkoutCreate';
 import WorkoutEdit from './WorkoutEdit';
 import { Container, Row, Col } from 'reactstrap';
-import WorkoutsTable from './WorkoutsTable';
+import WorkoutsTable from './WorkoutTable';
 
 class WorkoutIndex extends React.Component{
     constructor(props) {

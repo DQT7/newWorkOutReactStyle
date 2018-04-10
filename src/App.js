@@ -68,16 +68,26 @@ class App extends Component {
             if (this.state.sessionToken === localStorage.getItem('token')) {
               return (
                 <Switch>
+                     <div>
                   <Route path='/manage-user'>
                     <ManageUser sessionToken={this.state.sessionToken} addImage={this.modifyProfileImage} profileImg={this.state.profileImage}/>
                   </Route>
+                  <Route path='/' exact>
+                    <Splash sessionToken={this.state.sessionToken} profileImg={this.state.profileImage} />
+                </Route>
+                  </div>
                 </Switch>
+                 
               )
             } else {
               return (
+                 
                 <Route path="/auth" >
                   <Auth setToken={this.setSessionState} addImage={this.modifyProfileImage}/>
-                </Route>
+                  </Route>
+
+                
+               
               )
             }
           }
@@ -87,11 +97,12 @@ class App extends Component {
             <Router>
                 <div>
                     <SiteBar clickLogout={this.logout}/>
-                    {this.protectedViews()}
+                    
+                    
+                    <Route path='/' exact>
+                        {this.protectedViews()}
+                    </Route>
                 </div>
-                <Route path='/' exact>
-                    <Splash sessionToken={this.state.sessionToken} profileImg={this.state.profileImage} />
-                </Route>
             </Router>
         );
     }
