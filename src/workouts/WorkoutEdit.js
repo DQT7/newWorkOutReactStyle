@@ -1,19 +1,14 @@
 import React from 'react';
 import { Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody } from 'reactstrap';
-
-
 class WorkoutEdit extends React.Component {
-
     constructor(props) {
         super(props)
-
         this.state = {
             id: '',
             result: '',
             description: '',
             def: ''
         };
-
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -69,5 +64,4 @@ class WorkoutEdit extends React.Component {
         )
     }
 }
-
 export default WorkoutEdit;
